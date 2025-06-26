@@ -1,0 +1,20 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+import time
+
+#launch chrome automatically with correct driver
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+driver.get("https://rahulshettyacademy.com/client")
+#click on the register link 
+firstName = driver.find_element(By.ID, "firstName")
+firstName.send_keys("maneet")
+lastName = driver.find_element(By.ID, "lastName")
+lastName.send_keys("chawla")
+userEmail = driver.find_element (By.ID, "userEmail")
+userEmail.send_keys("maneet@gmail.com")
+userMobile = driver.find_element(By.ID,"userMobile")
+userMobile.send_keys("7999739235")
+time.sleep(30)
